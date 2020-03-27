@@ -1,4 +1,5 @@
-/*limited reset*/
+/* Global styles
+--------------------------------------------------------*/
 html, body, div, section, article, aside, header, hgroup, footer, nav, h1, h2, h3, h4, h5, h6, p, blockquote, address, time, span, em, strong, img, ol, ul, li, figure, canvas, video, th, td, tr {
 	margin: 0;
 	padding: 0;
@@ -7,7 +8,14 @@ html, body, div, section, article, aside, header, hgroup, footer, nav, h1, h2, h
 	a{
 		text-decoration: none;
 	}
-	/*Main Header*/
+	html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+/*Main Header
+------------------------------------------------------------*/
 .logo{
 	width:250px;
 	height:30px;
@@ -27,7 +35,6 @@ a:hover{
 }
 ul{
 	list-style:none;
-	width:450px;
 	height:40px;
 }
 ul li{
@@ -38,41 +45,51 @@ ul li{
 	display:flex;
 	float:left;
 }
-.secondUl{
-	display:flex;
-	float:left;
-}
 nav{
 	height: 35px;
 	background: black;	
 }
 .tiny{
-	margin:0 auto;
-	height: 150px;
+	overflow: hidden;
 	width:85%;
-	background:#ffffff;
+	margin-left:100px;
+	text-align: center;
+	background: white;
 }
 .tiny > img{
-	width:50%;
-	padding:20px 270px;	
+	width:45%;
 }
 body{
 	background:#fff0fd;
 }
 
-/*Main Aside*/
+/*Main Aside
+------------------------------------------------------------*/
 #mainPage{
 	width:85%;
 	margin-left:100px;
 }
+
+/*First Aside
+----------------------------------------------------------*/
 .firstAside{
-	padding-top: 10px;
-	display: flex;
+	overflow: hidden;
+	padding-top: 15px;
 	background:#ede8ed;
 }
-.firstAside img{
+.aside-div{
+	width: 25%;
+	float:left;
+	display: flex;
+}
+.aside-div p img{
 	width:150px;
-	padding:0px 2px;
+	height: 100px;
+}
+.asideText{
+	padding:0px 10px;
+	color:#877f87;
+
 }
 .text{
 	letter-spacing:0.2em;
@@ -83,7 +100,6 @@ body{
 	padding-bottom:5px;
 	padding-top: 10px;
 }
-.asideText{color:#877f87;}
 .asideText> a{
 	color:black;
 	font-weight:600;
@@ -93,17 +109,25 @@ body{
 	background: none;
 }
 
-/*Main atricle*/
+/*Main Article
+------------------------------------------------------------*/
 
 #mainArticle{
 	background: white;
+	padding:30px 0;
+	overflow: hidden;
 }
 #mainArticle header{
 	float:left;
 }
+.imgStyle{
+	width:40%;
+	float:left;
+	margin-left:20px;
+}
 #mainArticle header>h2{
 	font-size:45px;
-	padding:10px;
+	padding:20px;
 }
 #mainArticle header a{
 	color:black;
@@ -114,70 +138,117 @@ body{
 }
 #mainArticle header>p{
 	color:#595759;
-	padding:10px;
+	padding:10px 0px 0px 20px;
 	line-height: 1.6;
 }
-.imgStyle>img{
-	padding:30px;
-	width:55%;
-}
-/*Second Aside*/
+
+/*Second Aside
+------------------------------------------------------------*/
 .secondAside{
-	/*border-top:1px solid #595759;*/
+	clear:both;
 	background: white;
-	height: 470px;
-	outline:1px solid black;
-	display: flex;
-	height: 280px;
 }
-.secondAside h3{
-	padding:10px;
+.second-div{
+	outline:1px solid #595759;
+	width:25%;
+	float:left;
+	height: 600px;
+}
+.img-style img{
+	width:100%;
+	height:250px;
+	margin-bottom:15px;
 }
 .asideP{
 	color:#595759;
-	padding:5px;
+	padding:20px 0px 20px 10px;
 }
-.imgStyleS img{
-	width:270px;
-	height: 200px;
-	padding: 5px;
-}
-/*Footer*/
+
+
+/*Footer
+------------------------------------------------------------*/
 #pageFooter{
-	outline:1px solid black;
+	clear:both;
 	background:#151226;
-	height: 350px;
 	width:85%;
-	margin-left:100px;
+	margin-left: 100px;
+	padding-bottom: 200px;
 }
 .styleFooter{
-	outline:1px solid white;
-	height: 40px;
-	padding-left:50px;
-	padding-top:30px;
+	padding:20px 0px 20px 150px;
 }
 .titleFooter{
 	color:white;
-	border-top:1px solid white;
-	outline:1px solid white;
-	height: 25px;
-	padding:5px;
-	
+	border:1px solid white;
+	display:flex;
+	padding:10px 0px 10px 150px;
 }
 .titleFooterF{
-	float:left;
-	padding-left:150px;
-}
-.titleFooterS{
-
-	float:left;
-	padding-left:400px;
+	padding-right:350px;
 }
 .listFooter{
-	height:150px;
 	display: flex;
-	padding:30px 50px;
+	padding-top: 20px;
+	padding-left:140px;	
 }
-.listF{
-	color:white;
+.listF li a{
+	border:none;
+	background: none;
+}
+.listF li a:hover{
+	color:#708090;
+}
+
+
+/*MEDIA QUERIES
+------------------------------------------------------*/
+@media screen and (min-width:1280px){
+	ul{
+		max-width:500px;
+		width:70%;
+	}
+	.firstAside p img{	
+		width:100%;
+	}
+	.asideText{
+		font-size: 30px;
+	}
+	.aside-div{
+	width:25%;
+	float:left;
+	}
+	.aside-div p img{
+	float:left;
+	}	
+	.imgStyle{
+	width:60%;
+	text-align: center;
+	}
+
+}
+
+
+@media screen and (max-width:1280px){
+	.listF{
+		padding-right: 300px;
+	}
+	#pageFooter{
+		padding-bottom: 300px;
+	}
+}
+
+
+@media screen and (max-width: 1024px){
+	nav{
+		height: 60px;
+	}
+	.firstUl{
+		padding-top: 10px;
+	}
+	.firstUl li{
+		font-size: 20px;
+	}
+	#mainHeader > p{
+	
+	}
 }
